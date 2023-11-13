@@ -7,8 +7,8 @@ class Tina4LoginApi extends \Tina4\Api
      * Url to the sso website
      * @var string
      */
-//    private $ssoLoginUrl = "tina4sso.jrwebdesigns.co.za";
-    public string $ssoBaseUrl = "http://localhost:7777";
+//    private string $ssoBaseUrl = "tina4sso.jrwebdesigns.co.za";
+    public string $ssoBaseUrl = "http://localhost:7777"; //For testing purpose only
 
     public string $ssoBearerToken = "";
 

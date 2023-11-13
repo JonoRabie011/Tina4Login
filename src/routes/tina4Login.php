@@ -18,5 +18,7 @@ Post::add('/tina4/login', function (\Tina4\Response $response, \Tina4\Request  $
     $loginData["email"] = $request->params["email"];
     $loginData["password"] = $request->params["password"] ?? "";
 
+    $_SESSION["loginEmail"] = $request->params["email"];
+
     (new Tina4Login())->doLogin($loginData);
 });

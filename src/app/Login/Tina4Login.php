@@ -4,7 +4,7 @@ use function Tina4\redirect;
 
 /**
  * Tina4Login
- * Copy-right 2007 - current Tina4Login
+ * Copy-right 2023 - current Tina4Login
  * License: MIT https://opensource.org/licenses/MIT
  */
 
