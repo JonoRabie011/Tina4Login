@@ -24,6 +24,13 @@ class Tina4LoginApi extends \Tina4\Api
 
     public function __construct()
     {
+
+        Tina4LoginInit::postPackageInstall();
+
+        $this->ssoBearerToken = $_ENV["SSO_TOKEN"];
+        $this->successRedirectUrl = $_ENV["SSO_REDIRECT_URL"];
+        $this->ssoBaseUrl =  $_ENV["SSO_API_URL"];
+
         $this->baseURL = $this->ssoBaseUrl;
         $this->authHeader = "Authorization: Bearer " . $this->ssoBearerToken;
     }

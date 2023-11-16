@@ -6,13 +6,7 @@
  * License: MIT https://opensource.org/licenses/MIT
  */
 
-namespace Tina4Login;
 
-use Composer\Script\Event;
-
-/**
- * This class is used to manage package env variables
- */
 class Tina4LoginInit
 {
 
@@ -32,10 +26,9 @@ class Tina4LoginInit
 
     /**
      * Function runs after package install
-     * @param Event $event
      * @return void
      */
-    public final static function postPackageInstall(Event $event): void
+    public final static function postPackageInstall(): void
     {
         self::$rootPath = realpath(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..");
         self::$envPath = self::$rootPath. DIRECTORY_SEPARATOR . ".env";
