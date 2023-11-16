@@ -17,6 +17,9 @@
         "start-service": "@tina4service",
         "post-package-install": [
             "Tina4Login\\Tina4LoginInit::postPackageInstall"
+        ],
+        "post-package-update": [
+            "Tina4Login\\Tina4LoginInit::postPackageUpdate"
         ]
     },
     "autoload": {

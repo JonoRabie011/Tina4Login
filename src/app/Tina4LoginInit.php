@@ -57,6 +57,32 @@ class Tina4LoginInit
     }
 
     /**
+     * Function runs after package install
+     * @param Event $event
+     * @return void
+     */
+    public final static function postPackageUpdate(Event $event): void
+    {
+        self::$rootPath = realpath(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..");
+        self::$envPath = self::$rootPath. DIRECTORY_SEPARATOR . ".env";
+
+        if(file_exists(self::$envPath)) {
+
+            $existingKeys = self::readEnv(self::$envPath);
+
+            foreach (self::$keys as $key => $value) {
+                if(!in_array($key, $existingKeys)) {
+                    self::writeToEnv(self::$envPath, $key, $value);
+                }
+            }
+        } else {
+            foreach (self::$keys as $key => $value) {
+                self::writeToEnv(self::$envPath, $key, $value);
+            }
+        }
+    }
+
+    /**
      * Function to read current .env
      * @param $path
      * @return array
