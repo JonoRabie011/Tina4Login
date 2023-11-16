@@ -14,7 +14,10 @@
         "test:verbose": "@tina4 tests:verbose",
         "initialize": "@tina4 initialize:run",
         "start": "@tina4 webservice:run",
-        "start-service": "@tina4service"
+        "start-service": "@tina4service",
+        "post-package-install": [
+            "Tina4Login\\Tina4LoginInit::postPackageInstall"
+        ]
     },
     "autoload": {
         "classmap": [

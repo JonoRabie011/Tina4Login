@@ -16,7 +16,7 @@ class Tina4Register extends Tina4LoginApi implements Tina4RegisterCore
      * @param $body
      * @return void
      */
-    function doRegister($body): void
+    final function doRegister($body): void
     {
         $apiResponse = $this->sendRequest("/api/sign-up", "POST", $body);
         $this->afterRegister($apiResponse["httpCode"], $apiResponse["body"]);
