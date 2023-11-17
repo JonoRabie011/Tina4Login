@@ -16,7 +16,7 @@ class Tina4Register extends Tina4LoginApi implements Tina4RegisterCore
      * @param $body
      * @return void
      */
-    final function doRegister($body): void
+    public final function doRegister($body): void
     {
         $apiResponse = $this->sendRequest("/api/sign-up", "POST", $body);
         $this->afterRegister($apiResponse["httpCode"], $apiResponse["body"]);
@@ -27,9 +27,8 @@ class Tina4Register extends Tina4LoginApi implements Tina4RegisterCore
      *
      * @param $httpStatus 'Status code sent from server e.g 403, 404, 200
      * @param $responseData
-     * @return void
      */
-    function afterRegister($httpStatus, $responseData): void
+    function afterRegister($httpStatus, $responseData)
     {
 
         if($httpStatus === 200) {

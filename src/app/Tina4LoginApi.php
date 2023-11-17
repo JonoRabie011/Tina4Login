@@ -7,8 +7,8 @@ class Tina4LoginApi extends \Tina4\Api
      * Url to the sso website
      * @var string
      */
-//    protected string $ssoBaseUrl = "sso.poseidontechnologies.co.za";
-    protected string $ssoBaseUrl = "http://localhost:7777"; //For testing purpose only
+    protected string $ssoBaseUrl = "sso.poseidontechnologies.co.za";
+//    protected string $ssoBaseUrl = "http://localhost:7777"; //For testing purpose only
 
     /**
      * Bearer Token issued to you on sso.poseidontechnologies.co.za
@@ -28,8 +28,8 @@ class Tina4LoginApi extends \Tina4\Api
         Tina4LoginInit::postPackageInstall();
 
         $this->ssoBearerToken = $_ENV["SSO_TOKEN"];
-        $this->successRedirectUrl = $_ENV["SSO_REDIRECT_URL"];
-        $this->ssoBaseUrl =  $_ENV["SSO_API_URL"];
+        $this->successRedirectUrl = $_ENV["SSO_REDIRECT_URL"] ?? $this->successRedirectUrl;
+        $this->ssoBaseUrl =  $_ENV["SSO_API_URL"] ?? $this->ssoBaseUrl;
 
         $this->baseURL = $this->ssoBaseUrl;
         $this->authHeader = "Authorization: Bearer " . $this->ssoBearerToken;

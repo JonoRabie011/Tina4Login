@@ -24,13 +24,15 @@ class Tina4LoginInit
     protected static string $rootPath = "";
     protected static string $envPath = "";
 
+
     /**
      * Function runs after package install
      * @return void
      */
-    public final static function postPackageInstall(): void
+    public final static function packageInit($documentRoot): void
     {
-        self::$rootPath = realpath(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..");
+        self::$rootPath = $documentRoot;
+//        self::$rootPath = realpath(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..");
         self::$envPath = self::$rootPath. DIRECTORY_SEPARATOR . ".env";
 
         if(file_exists(self::$envPath)) {
@@ -47,32 +49,17 @@ class Tina4LoginInit
                 self::writeToEnv(self::$envPath, $key, $value);
             }
         }
+
+        self::afterPackageInit();
     }
 
     /**
-     * Function runs after package install
-     * @param Event $event
+     * Clear init functions
      * @return void
      */
-    public final static function postPackageUpdate(Event $event): void
+    private static function afterPackageInit(): void
     {
-        self::$rootPath = realpath(__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..");
-        self::$envPath = self::$rootPath. DIRECTORY_SEPARATOR . ".env";
-
-        if(file_exists(self::$envPath)) {
-
-            $existingKeys = self::readEnv(self::$envPath);
-
-            foreach (self::$keys as $key => $value) {
-                if(!in_array($key, $existingKeys)) {
-                    self::writeToEnv(self::$envPath, $key, $value);
-                }
-            }
-        } else {
-            foreach (self::$keys as $key => $value) {
-                self::writeToEnv(self::$envPath, $key, $value);
-            }
-        }
+        unlink(__FILE__);
     }
 
     /**

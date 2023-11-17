@@ -17,7 +17,7 @@ class Tina4Login extends Tina4LoginApi implements Tina4LoginCore
      * @param $body ["email" => "", "password"=>""]
      * @return void
      */
-    final function doLogin($body): void
+    public final function doLogin($body): void
     {
         $apiResponse = $this->sendRequest("/api/sign-in", "POST", $body);
         $this->afterLogin($apiResponse["httpCode"], $apiResponse["body"]);
