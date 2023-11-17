@@ -15,8 +15,7 @@ interface Tina4RegisterCore
      *
      * @param $httpStatus 'Status code sent from server e.g 403, 404, 200
      * @param $responseData
-     * @return void
      */
-    function afterRegister($httpStatus, $responseData): void;
+    function afterRegister($httpStatus, $responseData);
 
 }

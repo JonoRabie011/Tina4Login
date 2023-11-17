@@ -16,8 +16,7 @@ interface Tina4LoginCore
      * On 200 status set User session variable and redirect to '/'
      * @param $httpStatus 'Status code sent from server e.g 403, 404, 200
      * @param $responseData
-     * @return void
      */
-    function afterLogin($httpStatus, $responseData): void;
+    function afterLogin($httpStatus, $responseData);
 
 }
