@@ -1,14 +1,18 @@
 <?php
 
-class Tina4LoginApi extends \Tina4\Api
+namespace Tina4Login;
+
+use Tina4\Api;
+
+class Tina4LoginApi extends Api
 {
 
     /**
      * Url to the sso website
      * @var string
      */
-//    protected string $ssoBaseUrl = "sso.poseidontechnologies.co.za";
-    protected string $ssoBaseUrl = "http://localhost:7777"; //For testing purpose only
+    protected string $ssoBaseUrl = "sso.poseidontechnologies.co.za";
+//    protected string $ssoBaseUrl = "http://localhost:7777"; //For testing purpose only
 
     /**
      * Bearer Token issued to you on sso.poseidontechnologies.co.za

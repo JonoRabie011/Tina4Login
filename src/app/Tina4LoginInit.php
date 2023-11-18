@@ -6,6 +6,7 @@
  * License: MIT https://opensource.org/licenses/MIT
  */
 
+namespace Tina4Login;
 
 class Tina4LoginInit
 {

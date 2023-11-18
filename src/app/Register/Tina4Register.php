@@ -1,5 +1,7 @@
 <?php
 
+namespace Tina4Login;
+
 use function Tina4\redirect;
 
 /**
@@ -9,7 +11,7 @@ use function Tina4\redirect;
  */
 
 
-class Tina4Register extends Tina4LoginApi implements Tina4RegisterCore
+class Tina4Register extends Tina4LoginApi
 {
     /**
      * This function handles the signup request for a user
@@ -19,23 +21,6 @@ class Tina4Register extends Tina4LoginApi implements Tina4RegisterCore
     public final function doRegister($body): void
     {
         $apiResponse = $this->sendRequest("/api/sign-up", "POST", $body);
-        $this->afterRegister($apiResponse["httpCode"], $apiResponse["body"]);
-    }
-
-    /**
-     * This function is called after the Api request is made
-     *
-     * @param $httpStatus 'Status code sent from server e.g 403, 404, 200
-     * @param $responseData
-     */
-    function afterRegister($httpStatus, $responseData)
-    {
-
-        if($httpStatus === 200) {
-            redirect('/tina4/login');
-        }
-
-        redirect('/tina4/register?message=' . $responseData);
-
+        (new Tina4LoginRequestHelper())->afterRegister($apiResponse["httpCode"], $apiResponse["body"]);
     }
 }
