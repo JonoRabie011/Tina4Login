@@ -3,12 +3,15 @@
     <div class="main-container">
         <div class="form-container">
             <p class="title">Welcome back</p>
-            <form class="form" method="post" action="/tina4/login?formToken={{ formToken('tina4/login') }}">
+            <form class="form" id="tina4-login" method="post" action="/tina4/login">
                 <input type="email" name="email" class="input" placeholder="Email" value="{{ session.loginEmail }}">
                 <input type="password" name="password" class="input" placeholder="Password">
                 <p class="page-link">
                     <span class="page-link-label">Forgot Password?</span>
                 </p>
+
+                {{ "tina4-login" | formToken | raw }}
+
                 <button class="form-btn" type="submit">Log in</button>
             </form>
             <p class="sign-up-label">

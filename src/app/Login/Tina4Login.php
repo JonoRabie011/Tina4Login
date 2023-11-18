@@ -39,6 +39,5 @@ class Tina4Login extends Tina4LoginApi implements Tina4LoginCore
         }
 
         redirect('/tina4/login?message=' . $responseData);
-
     }
 }
