@@ -14,10 +14,9 @@ interface Tina4LoginCore
     /**
      * This function is called after the Api request is made
      *
-     * On 200 status set User session variable and redirect to '/'
      * @param $httpStatus 'Status code sent from server e.g 403, 404, 200
      * @param $responseData
      */
-    function afterLogin($httpStatus, $responseData);
+    function afterLogin($httpStatus, $responseData): void;
 
 }
