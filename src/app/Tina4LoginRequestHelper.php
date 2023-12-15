@@ -29,7 +29,7 @@ class Tina4LoginRequestHelper implements Tina4LoginCore, Tina4RegisterCore
      * @param $httpStatus 'Status code sent from server e.g 403, 404, 200
      * @param $responseData
      */
-    function afterRegister($httpStatus, $responseData)
+    function afterRegister($httpStatus, $responseData): void
     {
 
         if($httpStatus === 200) {
