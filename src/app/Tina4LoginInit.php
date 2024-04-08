@@ -28,6 +28,7 @@ class Tina4LoginInit
 
     /**
      * Function runs after package install
+     * @param $documentRoot
      * @return void
      */
     public final static function packageInit($documentRoot): void

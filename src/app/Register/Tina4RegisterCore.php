@@ -14,7 +14,7 @@ interface Tina4RegisterCore
     /**
      * This function is called after the Api request is made
      *
-     * @param $httpStatus 'Status code sent from server e.g 403, 404, 200
+     * @param $httpStatus <p>Status code sent from server e.g 403, 404, 200</p>
      * @param $responseData
      */
     function afterRegister($httpStatus, $responseData): void;
