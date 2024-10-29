@@ -2,10 +2,12 @@
     "name": "tina4components/tina4login",
     "description": "This is a package will render a login screen and register screen that work with tina4sso",
     "license": "MIT",
+    "type": "composer-plugin",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "tina4stack/tina4php": "^2.0"
+        "tina4stack/tina4php": "^2.0",
+        "composer-plugin-api": "^2.0"
     },
     "scripts": {
         "tina4": "tina4",
@@ -31,6 +33,9 @@
                 "src/routes"
             ]
         }
+    },
+    "extra": {
+        "class": "InstallerPlugin"
     },
     "config": {
         "process-timeout": 0

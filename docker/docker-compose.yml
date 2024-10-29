@@ -1,0 +1,32 @@
+version: "3"
+
+x-tina4-login-common-variables:
+  &tina4-login-common-variables
+  BASE_URL: 'http://localhost:7145'
+  REDIS_HOST: redis
+  REDIS_PORT: 6379
+  DEFAULT_USER_TOKEN_EXPIRY_DAYS: 1
+  TINA4_SERVICE_TIME: 60
+
+services:
+  app:
+    container_name: tina4_jobs
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      <<: *tina4-login-common-variables
+    ports:
+      - "7145:7145"
+    volumes:
+      - ../:/var/www/html
+    networks:
+      - internal
+
+networks:
+  internal:
+
+volumes:
+  tina4-jobs-db-data:
+
+
