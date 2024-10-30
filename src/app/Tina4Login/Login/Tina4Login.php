@@ -2,8 +2,6 @@
 
 namespace Tina4Login;
 
-use function Tina4\redirect;
-
 /**
  * Tina4Login
  * Copy-right 2023 - current Tina4Login
@@ -22,7 +20,8 @@ class Tina4Login extends Tina4LoginApi
     public final function doLogin($body): void
     {
         $apiResponse = $this->sendRequest("/api/sign-in", "POST", $body);
-        (new Tina4LoginRequestHelper())->afterLogin($apiResponse["httpCode"], $apiResponse["body"]);
+        $requestHandler = Tina4LoginRequestFactory::getTina4LoginRequestHandler();
+        $requestHandler->afterLogin($apiResponse["httpCode"], $apiResponse["body"]);
     }
 
 

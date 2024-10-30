@@ -3,7 +3,7 @@
 namespace Tina4Login;
 use function Tina4\redirect;
 
-class Tina4LoginRequestHelper implements Tina4LoginCore, Tina4RegisterCore
+class Tina4LoginRequestHelper implements Tina4LoginRequestHandler
 {
     /**
      * This function is called after the Api request is made

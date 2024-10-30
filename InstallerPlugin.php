@@ -22,7 +22,7 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
     public function uninstall(Composer $composer, IOInterface $io)
     {
         $projectRoot = getcwd();
-        file_exists($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") ? unlink($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") : "";
+//        file_exists($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") ? unlink($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") : "";
     }
 
     public static function getSubscribedEvents()
@@ -38,26 +38,26 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
 
         $projectRoot = getcwd();
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
-        $modulePath = $vendorDir . DIRECTORY_SEPARATOR . "tina4components" . DIRECTORY_SEPARATOR . "tina4jobsmodule";
+        $modulePath = $vendorDir . DIRECTORY_SEPARATOR . "tina4components" . DIRECTORY_SEPARATOR . "tina4login";
         $tina4JobsBin = $modulePath . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs";
 
-        $vendorChecksum = md5(file_get_contents( $tina4JobsBin));
-        $destChecksum = "";
-
-        if (file_exists($tina4JobsBin)) {
-            $checkContent = file_exists($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") ? file_get_contents($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") : "";
-            $destChecksum = md5($checkContent);
-        }
-
-        if ($vendorChecksum !== $destChecksum) {
-            \Tina4\Utilities::recurseCopy($modulePath . DIRECTORY_SEPARATOR  . "bin", $projectRoot . DIRECTORY_SEPARATOR . "bin");
-        }
+//        $vendorChecksum = md5(file_get_contents( $tina4JobsBin));
+//        $destChecksum = "";
+//
+//        if (file_exists($tina4JobsBin)) {
+//            $checkContent = file_exists($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") ? file_get_contents($projectRoot . DIRECTORY_SEPARATOR . "bin" . DIRECTORY_SEPARATOR . "tina4jobs") : "";
+//            $destChecksum = md5($checkContent);
+//        }
+//
+//        if ($vendorChecksum !== $destChecksum) {
+//            \Tina4\Utilities::recurseCopy($modulePath . DIRECTORY_SEPARATOR  . "bin", $projectRoot . DIRECTORY_SEPARATOR . "bin");
+//        }
 
         //Remove Docker folder
         self::deleteDirectory($modulePath . DIRECTORY_SEPARATOR . "docker");
 
-        // Add custom Composer scripts
-        self::addCustomComposerScripts($projectRoot);
+//        // Add custom Composer scripts
+//        self::addCustomComposerScripts($projectRoot);
 
     }
 
