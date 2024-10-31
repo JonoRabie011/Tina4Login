@@ -54,7 +54,7 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
 //        }
 
         //Remove Docker folder
-        self::deleteDirectory($modulePath . DIRECTORY_SEPARATOR . "docker");
+//        self::deleteDirectory($modulePath . DIRECTORY_SEPARATOR . "docker");
 
 //        // Add custom Composer scripts
 //        self::addCustomComposerScripts($projectRoot);
