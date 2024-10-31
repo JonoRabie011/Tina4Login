@@ -7,7 +7,8 @@
     "prefer-stable": true,
     "require": {
         "tina4stack/tina4php": "^2.0",
-        "composer-plugin-api": "^2.0"
+        "composer-plugin-api": "^2.0",
+        "ext-json": "*"
     },
     "scripts": {
         "tina4": "tina4",
@@ -18,10 +19,10 @@
         "start": "@tina4 webservice:run",
         "start-service": "@tina4service"
     },
+    "classmap": [
+        "src/"
+    ],
     "autoload": {
-        "classmap": [
-            "src/"
-        ],
         "files": [
             "loadModule.php"
         ],
