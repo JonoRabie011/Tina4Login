@@ -20,7 +20,10 @@
         "start-service": "@tina4service"
     },
     "classmap": [
-        "src/"
+        "src/*",
+        "src/app/*",
+        "src/orm/*",
+        "src/routes/*"
     ],
     "autoload": {
         "files": [
