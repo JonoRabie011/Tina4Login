@@ -10,14 +10,14 @@ x-tina4-login-common-variables:
 
 services:
   app:
-    container_name: tina4_jobs
+    container_name: tina4_login
     build:
       context: ./
       dockerfile: Dockerfile
     environment:
       <<: *tina4-login-common-variables
     ports:
-      - "7145:7145"
+      - "1234:7145"
     volumes:
       - ../:/var/www/html
     networks:
