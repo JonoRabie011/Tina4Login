@@ -5,8 +5,6 @@
  * License: MIT https://opensource.org/licenses/MIT
  */
 
-
-use app\Tina4LoginApi;
 use Tina4Login\Tina4LoginRequestFactory;
 
 
