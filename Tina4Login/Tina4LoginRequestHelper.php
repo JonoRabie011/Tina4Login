@@ -22,7 +22,11 @@ class Tina4LoginRequestHelper implements Tina4LoginRequestHandler
             redirect((new Tina4LoginApi())->successRedirectUrl);
         }
 
-        redirect('/tina4/login?message=' . $responseData);
+        if (empty($responseData)) {
+            $responseData = "An error occurred";
+        }
+
+        redirect('/tina4/login?message=' . http_build_query($responseData));
     }
 
     /**
