@@ -1,6 +1,5 @@
 <?php
 
-namespace Tina4Login;
 
 use Tina4\Api;
 
@@ -34,5 +33,7 @@ class Tina4LoginApi extends Api
 
         $this->baseURL = $this->ssoBaseUrl;
         $this->authHeader = "Authorization: Bearer " . $this->ssoBearerToken;
+
+        parent::__construct();
     }
 }

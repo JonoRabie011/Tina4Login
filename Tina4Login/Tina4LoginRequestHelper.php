@@ -1,6 +1,8 @@
 <?php
 
 namespace Tina4Login;
+
+use Tina4LoginApi;
 use function Tina4\redirect;
 
 class Tina4LoginRequestHelper implements Tina4LoginRequestHandler

@@ -1,8 +1,8 @@
 <?php
 
+
 use Tina4\Get;
 use Tina4\Post;
-use Tina4Login\Tina4Login;
 
 Get::add('/tina4/login', function (\Tina4\Response $response, \Tina4\Request $request) {
     $responseData = [];

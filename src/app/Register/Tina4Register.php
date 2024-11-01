@@ -1,12 +1,13 @@
 <?php
-
-namespace Tina4Login;
-
 /**
  * Tina4Login
  * Copy-right 2023 - current Tina4Login
  * License: MIT https://opensource.org/licenses/MIT
  */
+
+
+use app\Tina4LoginApi;
+use Tina4Login\Tina4LoginRequestFactory;
 
 
 class Tina4Register extends Tina4LoginApi
