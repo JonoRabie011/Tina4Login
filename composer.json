@@ -33,7 +33,7 @@
         }
     },
     "extra": {
-        "class": "InstallerPlugin"
+        "class": "\\InstallerPlugin"
     },
     "config": {
         "process-timeout": 0
