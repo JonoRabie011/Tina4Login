@@ -20,10 +20,12 @@
         "src/*",
         "src/app/*",
         "src/orm/*",
-        "src/routes/*"
+        "src/routes/*",
+        "Tina4Login/*"
     ],
     "autoload": {
         "psr-4": {
+            "Tina4Login\\": "Tina4Login/",
             "\\": [
                 "src/",
                 "src/app/",
