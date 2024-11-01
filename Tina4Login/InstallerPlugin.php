@@ -60,6 +60,9 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
 //        // Add custom Composer scripts
 //        self::addCustomComposerScripts($projectRoot);
 
+        // Check environment variables
+        self::checkEnvironmentVariables($projectRoot);
+
     }
 
 
