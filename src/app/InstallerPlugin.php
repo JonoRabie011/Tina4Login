@@ -1,5 +1,6 @@
 <?php
 
+namespace Tina4Login;
 
 use Composer\Composer;
 use Composer\Plugin\PluginInterface;

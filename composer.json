@@ -33,7 +33,7 @@
         }
     },
     "extra": {
-        "class": "\\InstallerPlugin"
+        "class": "Tina4Login\\InstallerPlugin"
     },
     "config": {
         "process-timeout": 0
