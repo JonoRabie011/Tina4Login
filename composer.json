@@ -24,6 +24,9 @@
         "Tina4Login/*"
     ],
     "autoload": {
+        "files": [
+            "loadModule.php"
+        ],
         "psr-4": {
             "Tina4Login\\": "Tina4Login/",
             "\\": [
