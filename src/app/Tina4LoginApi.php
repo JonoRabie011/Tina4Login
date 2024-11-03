@@ -31,9 +31,25 @@ class Tina4LoginApi extends Api
         $this->successRedirectUrl = $_ENV["SSO_REDIRECT_URL"] ?? $this->successRedirectUrl;
         $this->ssoBaseUrl =  $_ENV["SSO_API_URL"] ?? $this->ssoBaseUrl;
 
-        $this->baseURL = $this->ssoBaseUrl;
+        $this->baseURL = $this->getSSOBaseUrl();
         $this->authHeader = "Authorization: Bearer " . $this->ssoBearerToken;
 
-        parent::__construct();
+//        parent::__construct();
+    }
+
+    /**
+     * Get the base url for the SSO and set the protocol to https
+     * @return string
+     */
+    private function getSSOBaseUrl(): string
+    {
+
+        $url = str_replace("http://", "https://", $this->baseURL);
+
+        if(!str_starts_with($url, 'https://')) {
+            $url = "https://" . $url;
+        }
+
+        return $url;
     }
 }
