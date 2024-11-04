@@ -42,6 +42,10 @@ class Tina4LoginRequestHelper implements Tina4LoginRequestHandler
             redirect('/tina4/login');
         }
 
+        if (empty($responseData)) {
+            $responseData["message"] = "An error occurred";
+        }
+
         redirect('/tina4/register?message=' . $responseData);
     }
 }
