@@ -16,9 +16,13 @@ Once you have installed the following routes will be available:
  
  /tina4/register - Register Page html
 ```
+<br>
+To see how the module handles the login and register requests you can look at the following code:
 
+[Default Request Helper Implementation ](https://github.com/JonoRabie011/Tina4Login/blob/master/Tina4Login/Tina4LoginRequestHelper.php)
 
-To overide the after login function
+To override this functionality you can create your own implementation of the `Tina4LoginRequestHandler` 
+interface and set it using the `Tina4LoginRequestFactory` class. As shown in the example below:
 
 ```php
 <?php
