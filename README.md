@@ -37,7 +37,7 @@ Tina4LoginRequestFactory::setTina4LoginRequestHandler(new CustomLoginRequestHelp
 To use the module the following .env variables are required:
 
 ```dotenv
-SSO_API_URL=sso.poseidontechnologies.co.za
+SSO_API_URL=sso.jrwebdesigns.co.za
 SSO_TOKEN=<Your API Token from the sso protal>
 SSO_REDIRECT_URL=<Your redirect URL to you application>
 SSO_BASE_TWIG_FILE=tina4Login-base.twig | <The base twig you would like to have the login extend from>

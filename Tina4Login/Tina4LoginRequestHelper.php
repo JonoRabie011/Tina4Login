@@ -17,9 +17,14 @@ class Tina4LoginRequestHelper implements Tina4LoginRequestHandler
      */
     function afterLogin($httpStatus, $responseData): void
     {
+
         if($httpStatus === 200) {
             $_SESSION["user"] = (object)$responseData;
             redirect((new Tina4LoginApi())->successRedirectUrl);
+        }
+
+        if (is_string($responseData)) {
+            $responseData = ["message" => $responseData];
         }
 
         if (empty($responseData)) {

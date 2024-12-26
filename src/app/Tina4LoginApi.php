@@ -10,7 +10,7 @@ class Tina4LoginApi extends Api
      * Url to the sso website
      * @var string
      */
-    protected string $ssoBaseUrl = "sso.poseidontechnologies.co.za";
+    protected string $ssoBaseUrl = "https://sso.jrwebdesigns.co.za";
 //    protected string $ssoBaseUrl = "http://localhost:7777"; //For testing purpose only
 
     /**
@@ -47,14 +47,12 @@ class Tina4LoginApi extends Api
      */
     private function getSSOBaseUrl(): string
     {
-
-        $url = $this->ssoBaseUrl;
 //        $url = str_replace("http://", "https://", $this->baseURL);
 //
 //        if(!str_starts_with($url, 'https://')) {
 //            $url = "https://" . $url;
 //        }
 
-        return $url;
+        return $this->ssoBaseUrl;
     }
 }

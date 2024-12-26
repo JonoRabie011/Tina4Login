@@ -17,6 +17,7 @@ class Tina4Register extends Tina4LoginApi
      */
     public final function doRegister($body): void
     {
+        $body["deviceIp"] = UtilityFunctions::get_client_ip();
         $apiResponse = $this->sendRequest("/api/sign-up", "POST", $body);
         $requestHandler = Tina4LoginRequestFactory::getTina4LoginRequestHandler();
         $requestHandler->afterRegister($apiResponse["httpCode"], $apiResponse["body"]);

@@ -19,6 +19,7 @@ class Tina4Login extends Tina4LoginApi
      */
     public final function doLogin($body): void
     {
+        $body["deviceIp"] = UtilityFunctions::get_client_ip();
         $apiResponse = $this->sendRequest("/api/sign-in", "POST", $body);
         $requestHandler = Tina4LoginRequestFactory::getTina4LoginRequestHandler();
         $requestHandler->afterLogin($apiResponse["httpCode"], $apiResponse["body"]);
@@ -33,6 +34,5 @@ class Tina4Login extends Tina4LoginApi
         $apiResponse = $this->sendRequest("/api/sign-in/page", "GET");
         return $apiResponse["body"];
     }
-
 
 }
