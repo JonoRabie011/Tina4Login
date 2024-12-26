@@ -26,9 +26,3 @@ Post::add('/tina4/login', function (\Tina4\Response $response, \Tina4\Request  $
 
     (new Tina4Login())->doLogin($loginData);
 });
-
-Get::add('/tina4/get-login', function (\Tina4\Response $response, \Tina4\Request $request) {
-
-
-
-});

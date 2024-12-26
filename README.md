@@ -9,6 +9,15 @@ composer require tina4components/tina4login
 ```
 
 
+Once you have installed the following routes will be available:
+
+```
+ /tina4/login - Login Page html 
+ 
+ /tina4/register - Register Page html
+```
+
+
 To overide the after login function
 
 ```php
