@@ -24,5 +24,15 @@ class Tina4Login extends Tina4LoginApi
         $requestHandler->afterLogin($apiResponse["httpCode"], $apiResponse["body"]);
     }
 
+    /**
+     * Return the login page settings e.g. Google Sign In Button, SSO Sign In
+     * @return mixed
+     */
+    public final function getLoginPageSettings()
+    {
+        $apiResponse = $this->sendRequest("/api/sign-in/page", "GET");
+        return $apiResponse["body"];
+    }
+
 
 }

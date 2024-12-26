@@ -27,6 +27,10 @@ class Tina4LoginApi extends Api
 
     public function __construct()
     {
+        if (empty($_ENV["SSO_TOKEN"])) {
+            \Tina4\redirect('/tina4/login?message='.urlencode("SSO Token not set, please set the SSO_TOKEN in your .env file"));
+        }
+
         $this->ssoBearerToken = $_ENV["SSO_TOKEN"];
         $this->successRedirectUrl = $_ENV["SSO_REDIRECT_URL"] ?? $this->successRedirectUrl;
         $this->ssoBaseUrl =  $_ENV["SSO_API_URL"] ?? $this->ssoBaseUrl;
@@ -34,7 +38,7 @@ class Tina4LoginApi extends Api
         $this->baseURL = $this->getSSOBaseUrl();
         $this->authHeader = "Authorization: Bearer " . $this->ssoBearerToken;
 
-//        parent::__construct();
+        parent::__construct($this->baseURL, $this->authHeader);
     }
 
     /**
@@ -44,11 +48,12 @@ class Tina4LoginApi extends Api
     private function getSSOBaseUrl(): string
     {
 
-        $url = str_replace("http://", "https://", $this->baseURL);
-
-        if(!str_starts_with($url, 'https://')) {
-            $url = "https://" . $url;
-        }
+        $url = $this->ssoBaseUrl;
+//        $url = str_replace("http://", "https://", $this->baseURL);
+//
+//        if(!str_starts_with($url, 'https://')) {
+//            $url = "https://" . $url;
+//        }
 
         return $url;
     }
