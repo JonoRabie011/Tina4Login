@@ -20,7 +20,7 @@ class Tina4LoginRequestHelper implements Tina4LoginRequestHandler
 
         if($httpStatus === 200) {
             $_SESSION["user"] = (object)$responseData;
-            redirect((new Tina4LoginApi())->successRedirectUrl);
+            redirect((new Tina4LoginApi())->successRedirectUrl. "?". http_build_query($responseData));
         }
 
         if (is_string($responseData)) {

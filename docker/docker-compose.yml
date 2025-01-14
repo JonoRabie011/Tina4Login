@@ -7,6 +7,9 @@ x-tina4-login-common-variables:
   REDIS_PORT: 6379
   DEFAULT_USER_TOKEN_EXPIRY_DAYS: 1
   TINA4_SERVICE_TIME: 60
+  SSO_TOKEN: '37848C11-A4A8-46A6-90D4-C145778CD7C8'
+  SSO_REDIRECT_URL: 'aHR0cDovLzEyNy4wLjAuMTo3Nzc3L3Nzby1sb2dpbg'
+  SSO_BASE_TWIG_FILE: 'tina4Login-base.twig'
 
 services:
   app:

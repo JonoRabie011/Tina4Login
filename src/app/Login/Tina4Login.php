@@ -31,7 +31,10 @@ class Tina4Login extends Tina4LoginApi
      */
     public final function getLoginPageSettings()
     {
-        $apiResponse = $this->sendRequest("/api/sign-in/page", "GET");
+        $apiResponse = $this->sendRequest("/api/sign-in/page?".http_build_query([
+            "redirect_uri" => base64_encode($_ENV["SSO_REDIRECT_URL"]) ?? null
+        ]));
+
         return $apiResponse["body"];
     }
 
