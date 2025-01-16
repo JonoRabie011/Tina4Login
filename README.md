@@ -8,6 +8,13 @@ To install the module, you can use the following command:
 composer require tina4components/tina4login
 ```
 
+To use the module the following .env variables are required:
+
+```dotenv
+SSO_TOKEN=<Your API Token from the sso protal>
+SSO_REDIRECT_URL=<Your redirect URL to you application>
+SSO_BASE_TWIG_FILE=tina4Login-base.twig | <The base twig you would like to have the login extend from>
+```
 
 Once you have installed the following routes will be available:
 
@@ -98,14 +105,4 @@ Tina4LoginRequestFactory::setTina4LoginRequestHandler(new CustomLoginRequestHelp
 ### 200 OK - User needs to confirm email before they can login
 ```json
 "Your user has been created be on the lookout for your confirmation email"
-```
-
-
-To use the module the following .env variables are required:
-
-```dotenv
-SSO_API_URL=sso.jrwebdesigns.co.za
-SSO_TOKEN=<Your API Token from the sso protal>
-SSO_REDIRECT_URL=<Your redirect URL to you application>
-SSO_BASE_TWIG_FILE=tina4Login-base.twig | <The base twig you would like to have the login extend from>
 ```

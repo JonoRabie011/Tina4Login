@@ -125,7 +125,6 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
         $envPath = $projectRoot . DIRECTORY_SEPARATOR . '.env';
 
         $keys = [
-            "SSO_API_URL" => "sso.poseidontechnologies.co.za",
             "SSO_TOKEN" => "token",
             "SSO_REDIRECT_URL" => "/",
             "SSO_BASE_TWIG_FILE" => "tina4Login-base.twig"

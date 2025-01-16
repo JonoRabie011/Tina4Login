@@ -33,7 +33,6 @@ class Tina4LoginApi extends Api
 
         $this->ssoBearerToken = $_ENV["SSO_TOKEN"];
         $this->successRedirectUrl = $_ENV["SSO_REDIRECT_URL"] ?? $this->successRedirectUrl;
-        $this->ssoBaseUrl =  $_ENV["SSO_API_URL"] ?? $this->ssoBaseUrl;
 
         $this->baseURL = $this->getSSOBaseUrl();
         $this->authHeader = "Authorization: Bearer " . $this->ssoBearerToken;
